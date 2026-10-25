@@ -1,0 +1,39 @@
+server:
+  port: 8081
+  address: 0.0.0.0
+  error:
+    include-message: never
+    include-stacktrace: never
+spring:
+  application:
+    name: portfolio-api
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+      mail.smtp.writetimeout: 5000
+management:
+  health:
+    mail:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+portfolio:
+  mail:
+    from: ${MAIL_FROM:${MAIL_USERNAME:}}
+  contact:
+    to: ${CONTACT_TO:happydavid226@gmail.com}
+logging:
+  level:
+    root: INFO

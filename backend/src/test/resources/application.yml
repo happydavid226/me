@@ -1,0 +1,13 @@
+spring:
+  mail:
+    host: localhost
+    port: 2525
+management:
+  health:
+    mail:
+      enabled: false
+portfolio:
+  mail:
+    from: portfolio@example.test
+  contact:
+    to: owner@example.test
